@@ -59,7 +59,7 @@ const model = {
       });
 
       this.itemSelector.addEventListener('change', (e) => {
-        this.itemHeader.textContent = e.target.value;
+        this.itemHeader.textContent = "Item selected: " + e.target.value;
       });
     },
 
@@ -73,9 +73,10 @@ const model = {
         this.itemSelector.add(option);
       });
 
+      // if nothing is selected yet, header should display something
       if(defaultItem) {
         this.itemSelector.value = defaultItem;
-        this.itemHeader.textContent = defaultItem;
+        this.itemHeader.textContent = "Item selected: " + defaultItem;
       }
       else {
         this.itemHeader.textContent = 'Select an item';
